@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import TallerCard from "../components/TallerCard";
 import InstagramEmbedList from "../components/InstagramEmbedList";
 import TestimonioCard from "../components/TestimonioCard";
@@ -9,10 +9,7 @@ const talleres = [
   { titulo: "Teatro Adultos", horario: "Miércoles 19:00", descripcion: "Técnicas teatrales, juegos y expresión para adultos de todas las edades." }
 ];
 
-const actividades = [
-  { titulo: "Feria de Libros", fecha: "10/05/2025", descripcion: "Gran feria de intercambio y venta de libros usados y nuevos." },
-  { titulo: "Muestra de Talleres", fecha: "24/05/2025", descripcion: "Exposición de trabajos y presentaciones de los talleres del centro." }
-];
+
 
 interface Testimonio {
   nombre: string;
