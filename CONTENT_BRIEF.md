@@ -100,6 +100,7 @@ Datos: Dirección física, WhatsApp, Email.
 - Contacto: "Escribinos".
 
 ## ✅ Observaciones Especiales
+- La presentación institucional ("Quiénes somos") está incluida como sección destacada en el landing. No existe más una página "Nosotros" separada ni su link en el menú. La ruta /nosotros redirige automáticamente al inicio.
 - Todo el sitio debe ser muy intuitivo y accesible.
 - Los formularios y la base de datos deberán estar integrados para administrar talleres, inscripciones, y futuros envíos de mailing o WhatsApp de difusión.
 - Posicionamiento SEO inicial: basado en "Centro Cultural Barrial", "Talleres en [nombre del barrio]", "Actividades para vecinos", "Alquiler de salón barrial".

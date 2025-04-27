@@ -1,103 +1,99 @@
 import Image from "next/image";
+import TallerCard from "../components/TallerCard";
+import InstagramEmbedList from "../components/InstagramEmbedList";
+import TestimonioCard from "../components/TestimonioCard";
+
+// Datos simulados para talleres y actividades (luego serán dinámicos)
+const talleres = [
+  { titulo: "Arte para Niñxs", horario: "Lunes 17:30", descripcion: "Exploración artística y creatividad para chicos y chicas de 6 a 12 años." },
+  { titulo: "Teatro Adultos", horario: "Miércoles 19:00", descripcion: "Técnicas teatrales, juegos y expresión para adultos de todas las edades." }
+];
+
+const actividades = [
+  { titulo: "Feria de Libros", fecha: "10/05/2025", descripcion: "Gran feria de intercambio y venta de libros usados y nuevos." },
+  { titulo: "Muestra de Talleres", fecha: "24/05/2025", descripcion: "Exposición de trabajos y presentaciones de los talleres del centro." }
+];
+
+interface Testimonio {
+  nombre: string;
+  rol: string;
+  frase: string;
+  imagen: string;
+}
+
+const testimonios: Testimonio[] = [
+  {
+    nombre: "Marta",
+    rol: "Alumna de Arte",
+    frase: "Gracias al CRA, volví a conectarme con mi pasión por la pintura y conocí gente increíble.",
+    imagen: "/testimonio-1-1080x1080.jpg"
+  },
+  {
+    nombre: "Luis",
+    rol: "Profesor de Teatro",
+    frase: "Un espacio único para crecer, crear y compartir. ¡Orgulloso de pertenecer!",
+    imagen: "/testimonio-2-1080x1080.jpg"
+  }
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="landing-cra">
+      <section className="hero-cra hero-cra-bg">
+        <h1 className="hero-title">Centro Rincón de Amigos</h1>
+        <span className="hero-slogan">¡Puertas abiertas al encuentro barrial!</span>
+        <p className="hero-desc">
+          Somos un espacio de encuentro, cultura y participación en el corazón del barrio. Promovemos talleres, actividades y eventos para todas las edades, fortaleciendo lazos, impulsando la creatividad y apostando siempre a la comunidad.
+        </p>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Sección visual del salón */}
+      {/* Talleres */}
+      <section className="talleres-section">
+        <h2 className="talleres-title">Talleres</h2>
+        <div className="talleres-listado">
+          {talleres.map((taller, i) => (
+            <TallerCard key={i} titulo={taller.titulo} horario={taller.horario} descripcion={taller.descripcion} />
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Posteos fijados de Instagram */}
+      <section className="ig-section" style={{margin: '2.5rem 0 1.5rem 0'}}>
+        <InstagramEmbedList postUrls={[
+          // Ejemplo: reemplaza por los links o códigos de tus posteos fijados
+          "https://www.instagram.com/p/Cv7Yx6nM9tH/",
+          "https://www.instagram.com/p/Cw8Zy7oM1aA/",
+          "https://www.instagram.com/p/Cx9A0bN2bB/"
+        ]} />
+      </section>
+
+      {/* Sección visual del salón */}
+      <section className="salon-section">
+        <div className="salon-img-wrap">
+          <img src="/salon-stock-1600x900.jpg" alt="Salón Centro Rincón de Amigos" className="salon-img" />
+        </div>
+        <div className="salon-info">
+          <h2 className="salon-title">Nuestro Salón</h2>
+          <p className="salon-desc">
+            Un espacio pensado para <strong>cumpleaños</strong>, <strong>reuniones</strong> y <strong>eventos familiares</strong>, abierto a amigos y vecinos del barrio. Luminoso, versátil y acogedor, ideal para compartir buenos momentos.
+          </p>
+          <p className="salon-consulta">Consultanos para conocer disponibilidad y detalles.</p>
+          <a href="/salon" className="btn-salon-contacto">Conocé el salón</a>
+        </div>
+      </section>
+
+      {/* Testimonios */}
+      <section className="testimonios-section">
+        <h2 className="testimonios-title">Testimonios y Comunidad</h2>
+        <div style={{display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center'}}>
+          {testimonios.map((testimonio, i) => (
+            <TestimonioCard key={i} nombre={testimonio.nombre} rol={testimonio.rol} frase={testimonio.frase} imagen={testimonio.imagen} />
+          ))}
+        </div>
+      </section>
+
+
     </div>
   );
 }

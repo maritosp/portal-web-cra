@@ -11,6 +11,7 @@ El sitio web debe transmitir cercanía, accesibilidad y dinamismo.
 - Ser funcional, claro y fácil de navegar para personas de todas las edades (incluyendo adultos mayores).
 
 ## 3. Público objetivo
+- La información institucional (historia, misión, valores, equipo) está incluida como sección en el landing. No existe más la página “Nosotros” ni su link en el menú. La ruta /nosotros redirige automáticamente al inicio.
 - Vecinos del barrio, principalmente adultos y personas mayores, pero también jóvenes interesados en actividades culturales y comunitarias.
 - Profesores y artistas locales que quieran ofrecer talleres o actividades.
 - Eventuales visitantes interesados en eventos abiertos o alquiler del espacio.

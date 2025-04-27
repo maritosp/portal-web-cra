@@ -1,15 +1,12 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+
 import { useState } from "react";
 import styles from "./Header.module.css";
 
 const navLinks = [
-  { href: "/nosotros", label: "Nosotros" },
   { href: "/talleres", label: "Talleres" },
-  { href: "/actividades", label: "Actividades" },
   { href: "/salon", label: "Salón" },
-  { href: "/contacto", label: "Contacto" },
 ];
 
 export default function Header() {
@@ -18,25 +15,30 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logoMenu}>
-        <Link href="/">
-          <Image
-            src="/moodboard-portal-cra.jpg"
-            alt="Centro Rincón de Amigos"
-            width={48}
-            height={48}
-            className={styles.logo}
-          />
+        <Link href="/" aria-label="Ir al inicio">
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem' }}>
+            <img
+              src="/moodboard-portal-cra.png"
+              alt="Centro Rincón de Amigos"
+              width={96}
+              height={96}
+              className={styles.logo}
+              draggable={false}
+            />
+
+          </span>
         </Link>
-        <button
-          className={styles.hamburger}
-          aria-label="Abrir menú"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+
       </div>
+      <button
+        className={styles.hamburger}
+        aria-label="Abrir menú"
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
       <nav className={`${styles.nav} ${open ? styles.open : ""}`}>
         {navLinks.map((link) => (
           <Link key={link.href} href={link.href} className={styles.link} onClick={() => setOpen(false)}>

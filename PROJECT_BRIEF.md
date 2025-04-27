@@ -21,8 +21,11 @@ Desarrollar un ecosistema digital moderno, accesible y eficiente para el Centro 
 - Quiénes somos
 - Historia del centro
 - Nuestro barrio y comunidad
-- Valores y misión
-- Equipo de trabajo
+- **Estructura de páginas:** ✔️ Landing (con sección "Quiénes somos"), Talleres, Actividades, Contacto, etc. La información institucional se encuentra en el landing y no existe más la página "Nosotros" ni su link en el menú. La ruta /nosotros redirige automáticamente al inicio.
+- Galería de fotos
+- Noticias y novedades
+- Eventos especiales
+- Talleres disponibles (vista pública)
 
 ## Actividades y Eventos
 - Calendario público de actividades
