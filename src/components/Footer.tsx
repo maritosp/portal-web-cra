@@ -6,31 +6,29 @@ export default function Footer() {
       <div className={styles.info}>
         <div>
           <strong>Centro Rincón de Amigos</strong><br />
-          Calle Ejemplo 123, Barrio X, Ciudad Y<br />
-          WhatsApp: <a href="https://wa.me/5491112345678" target="_blank" rel="noopener">+54 9 11 1234-5678</a><br />
-          Email: <a href="mailto:info@rincondeamigos.org">info@rincondeamigos.org</a>
+          <a href="https://goo.gl/maps/9r4T2kz2sE4e5rKj7" target="_blank" rel="noopener" style={{ color: 'inherit', textDecoration: 'underline' }}>
+            Cervantes 2481 - Villa Devoto - CABA
+          </a><br />
+          <a
+            href="https://wa.me/541156572275?text=Hola!%20Quiero%20hacer%20una%20consulta%20sobre%20el%20Centro%20Rinc%C3%B3n%20de%20Amigos."
+            target="_blank"
+            rel="noopener"
+            style={{ color: 'inherit', textDecoration: 'underline' }}
+          >
+            11-5657-2275 (WhatsApp)
+          </a><br />
+          <a href="mailto:centrorincondeamigos.vd@gmail.com" style={{ color: 'inherit', textDecoration: 'underline' }}>
+            centrorincondeamigos.vd@gmail.com
+          </a>
         </div>
         <div className={styles.socials}>
-          <a href="https://instagram.com/tu_instagram" target="_blank" rel="noopener" aria-label="Instagram">
+          <a href="https://www.instagram.com/centrorincondeamigos/" target="_blank" rel="noopener" aria-label="Instagram">
             <img src="/instagram.svg" alt="Instagram" width={28} height={28} />
           </a>
-          <a href="https://facebook.com/tu_facebook" target="_blank" rel="noopener" aria-label="Facebook">
+          <a href="https://www.facebook.com/profile.php?id=61562706943114" target="_blank" rel="noopener" aria-label="Facebook">
             <img src="/facebook.svg" alt="Facebook" width={28} height={28} />
           </a>
         </div>
-      </div>
-      <div className={styles.mapCopyright}>
-        <iframe
-          title="Mapa CRA"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-58.3816,-34.6037,-58.3816,-34.6037&amp;layer=mapnik"
-          width="180"
-          height="80"
-          style={{ border: 0 }}
-          loading="lazy"
-        />
-        <span className={styles.copyright}>
-          © {new Date().getFullYear()} Centro Rincón de Amigos. Todos los derechos reservados.
-        </span>
       </div>
     </footer>
   );
